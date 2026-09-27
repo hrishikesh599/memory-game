@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="mainBox">
+    <section id="homePage" class="page active-page">
+      <p class="small-title">MEMORY CHALLENGE</p>
+      <h1>MEMORY  GAME</h1>
+      <p class="sub-title">How Hard Can You Remember.</p>
+      <div class="homeBtns">
+        <button id="startBtn" class="mainBtn">START GAME</button>
+        <button id="scoresBtn" class="normalBtn">LEADERBOARD</button>
+        <button id="rulesBtn" class="normalBtn">HOW TO PLAY</button>
+      </div>
+    </section>
+    <section id="levelPage" class="page">
+      <button class="backBtn" data-go="homePage">← Back</button>
+      <p class="small-title">CHOOSE YOUR CHALLENGE</p>
+      <h2>Pick a Difficulty</h2>
+      <div class="levels">
+        <button class="lvlBtn" data-level="easy">
+          <b>Easy</b><span>4 × 4</span>
+        </button>
+        <button class="lvlBtn" data-level="medium">
+          <b>Medium</b><span>5 × 5</span>
+        </button>
+        <button class="lvlBtn" data-level="hard">
+          <b>Hard</b><span>6 × 6</span>
+        </button>
+        <button class="lvlBtn" data-level="master">
+          <b>Master</b><span>7 × 7</span>
+        </button>
+        <button class="lvlBtn" data-level="grand">
+          <b>Grand Master</b><span>8 × 8</span>
+        </button>
+      </div>
+    </section>
+    <section id="gamePage" class="page">
+      <div class="gameTop">
+        <button id="leaveBtn" class="backBtn">← Menu</button>
+        <div>
+          <p id="lvlName">EASY</p>
+          <h2>Memory Grid</h2>
+        </div>
+        <button id="restartBtn" class="normalBtn">Restart</button>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span>TIME</span>
+          <b id="timeTxt">00:00</b>
+        </div>
+        <div class="stat">
+          <span>MOVES</span>
+          <b id="movesTxt">0</b>
+        </div>
+        <div class="stat">
+          <span>MATCHES</span>
+          <b id="matchTxt">0</b>
+        </div>
+      </div>
+      <div id="grid"></div>
+    </section>
+    <section id="scoresPage" class="page">
+      <button class="backBtn" data-go="homePage">← Back</button>
+      <p class="small-title">YOUR RECORDS</p>
+      <h2>Leaderboard</h2>
+      <div id="scoreList"></div>
+      <button id="clearBtn" class="clearBtn">Clear Records</button>
+    </section>
+    <section id="rulesPage" class="page">
+      <button class="backBtn" data-go="homePage">← Back</button>
+      <p class="small-title">GAME RULES</p>
+      <h2>How To Play</h2>
+      <div class="rules">
+        <h3>1. Flip a card</h3>
+        <p>Click a card to see the symbol underneath.</p>
+        <h3>2. Remember it</h3>
+        <p>Try to remember where you saw that symbol.</p>
+        <h3>3. Find the match</h3>
+        <p>Click another card and try to find its matching symbol.</p>
+        <h3>4. Finish the board</h3>
+        <p>Match everything while using as little time and as few moves as possible.</p>
+        <h3>About 5 × 5 and 7 × 7</h3>
+        <p>Those boards have an odd number of spaces, so they contain one special Wild card.</p>
+      </div>
+    </section>
+  </div>
+  <div id="winPop" class="popup hidden">
+    <div class="popBox">
+      <p class="small-title">GAME COMPLETE</p>
+      <h2>You did it!</h2>
+      <p id="finalTxt">Time: 00:00</p>
+      <p id="recordTxt"></p>
+      <button id="againBtn" class="mainBtn">PLAY AGAIN</button>
+      <button id="menuBtn" class="normalBtn">MAIN MENU</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
