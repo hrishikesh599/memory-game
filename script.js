@@ -63,7 +63,6 @@ function showPage(pageId) {
   pages.forEach(function(page) {
     page.classList.remove("active-page");
   });
-
   var p = document.getElementById(pageId);
   p.classList.add("active-page");
 }
@@ -92,10 +91,8 @@ function saveScore(time) {
 function timeStr(seconds) {
   var mins = Math.floor(seconds / 60);
   var secs2 = seconds % 60;
-
   mins = String(mins).padStart(2, "0");
   secs2 = String(secs2).padStart(2, "0");
-
   return mins + ":" + secs2;
 }
 function startTimer() {
@@ -128,11 +125,9 @@ function shuffle(cards) {
   for (let i = cards.length - 1; i > 0; i--) {
     var r = Math.floor(Math.random() * (i + 1));
     var temp = cards[i];
-
     cards[i] = cards[r];
     cards[r] = temp;
   }
-
   return cards;
 }
 function makeCards(size, needsWild) {
@@ -210,7 +205,6 @@ function matched() {
   var level = levels[curLvl];
   var total = level.size * level.size;
   var needed = Math.floor(total / 2);
-
   if (matches == needed) {
     won();
   }
@@ -284,10 +278,8 @@ function loadScores() {
 	}
     var name = level[1];
     var txt = savedTime;
-
     row.innerHTML = "<strong>" + name + "</strong>";
     row.innerHTML += "<span>" + txt + "</span>";
-
     scoreList.appendChild(row);
   });
 }
